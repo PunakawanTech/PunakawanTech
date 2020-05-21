@@ -59,7 +59,7 @@ export default class Navigation extends Component {
                 <nav className={`transition duration-500 z-50 flex items-center justify-between flex-wrap p-2 mb-4 fixed w-full bg-white top-0 ${shadow}`}>
                     <div className="flex items-center flex-shrink-0 mr-6">
                         <span className="font-thin text-xl tracking-tight">
-                            <span className="font-semibold text-blue-500">Punakawan</span> Tech
+                            <span className="font-semibold text-blue-500">Punakawan</span>Tech
                         </span>
                     </div>
                     <div className="block md:hidden lg:hidden">
@@ -91,8 +91,13 @@ export default class Navigation extends Component {
                                     About Us
                                 </a>
                             </Link>
+                            <Link href="/showcase">
+                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-gray-700 hover:text-blue-500 mr-4">
+                                    Showcase
+                                </a>
+                            </Link>
                             <Link href="/blog">
-                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-gray-700 hover:text-blue-500">
+                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-gray-700 hover:text-blue-500 mr-4">
                                     Blog
                                 </a>
                             </Link>

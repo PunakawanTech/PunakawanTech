@@ -22,17 +22,19 @@ class Home extends Component {
                         <h1 className="md:text-4xl lg:text-6xl font-bold">
                             Make Your Business More Profitable
                             <p className="text-lg font-light">
-                                we will help by planning, design, develop, and even training.
+                                We will help by planning, design, develop, and even training.
                             </p>
                         </h1>
-                        {/* <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-4">
-                            Get Started
-                        </button> */}
+                        <div className="mt-10">
+                            <a href="mailto:me@punakawantech.com" className="transition duration-500 hover:bg-transparent rounded-full bg-blue-500 hover:text-blue-700 shadow-lg font-semibold text-white py-3 px-10 border border-blue-500 rounded">
+                                Contact Us
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div id="services">
-                    <h1 className="md:text-4xl lg:text-6xl text-blue-700 font-bold text-center sm:mt-5 md:mt-20">
+                    <h1 className="md:text-4xl lg:text-5xl text-blue-700 font-bold text-center sm:mt-5 md:mt-20">
                         STUFF WE DO
                         <p className="text-lg font-light">
                             WHAT CAN WE OFFERS TO YOU. HERE IS OUR FIELDS OF DEVELOPMENT.
@@ -80,7 +82,7 @@ class Home extends Component {
                 </div>
 
                 <div id="about-us">
-                    <h1 className="md:text-4xl lg:text-6xl text-blue-700 font-bold text-center mt-10 md:mt-20">
+                    <h1 className="md:text-4xl lg:text-5xl text-blue-700 font-bold text-center mt-10 md:mt-20">
                         ABOUT US
                         <p className="text-lg font-light">
                             COMPANY OVERVIEW AND THE TEAM OF DEVELOPER.
@@ -97,7 +99,7 @@ class Home extends Component {
                         with that idea.
                     </div>
 
-                    <h3 className="md:text-2xl lg:text-4xl text-blue-700 font-semibold text-center mt-10 mb-3">
+                    <h3 className="md:text-2xl lg:text-3xl text-blue-700 font-semibold text-center mt-10 mb-3">
                         Our Teams
                     </h3>
 

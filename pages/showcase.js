@@ -15,7 +15,7 @@ class Home extends Component {
 
                 <div className="mt-20">
                     <h1 className="md:text-4xl lg:text-5xl text-blue-700 font-thin text-center mb-16 sm:mt-5 md:mt-20">
-                        BLOG COMING SOON
+                        SHOWCASE COMING SOON
                     </h1>
 
                     <img src="/assets/soon.svg" alt="coming-soon" className="w-3/5 mx-auto" />
