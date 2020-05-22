@@ -7,7 +7,7 @@ function Error() {
         <div className="mt-20">
             <img src="/assets/404.svg" alt="404" className="w-4/5 mx-auto" />
 
-            <Button href="/" className="text-center" style={{display: 'block', margin: '40px auto', width: 100}}>
+            <Button href="/" className="text-center text-primary" style={{display: 'block', margin: '40px auto', width: 100}}>
                 Home
             </Button>
         </div>

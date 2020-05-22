@@ -15,6 +15,52 @@ html {
     scroll-behavior: smooth;
 }
 
+.theme-light {
+    --color-bg-primary: #4299e1;
+    --color-bg-secondary: #ffffff;
+    --color-bg-default: #ffffff;
+    --color-bg-inverse: #dcdcdc;
+  
+    --color-text-primary: #4299e1;
+    --color-text-secondary: #44467b;
+    --color-text-default: #373737;
+    --color-text-default-soft: #6a6a6a;
+    --color-text-inverse: #fff;
+    --color-text-inverse-soft: rgba(255, 255, 255, 0.7);
+  
+    --font-display: Futura, Trebuchet MS, Arial, sans-serif;
+    --font-body: Futura, Trebuchet MS, Arial, sans-serif;
+  
+    --font-weight-normal: 400;
+    --font-weight-display: 600;
+    --font-weight-btn: 600;
+  
+    --rounded-btn: 9999px;
+}
+
+.theme-dark {
+    --color-bg-primary: #4299e1;
+    --color-bg-secondary: #191919;
+    --color-bg-default: #030303;
+    --color-bg-inverse: #dcdcdc;
+  
+    --color-text-primary: #4299e1;
+    --color-text-secondary: #44467b;
+    --color-text-default: #efefef;
+    --color-text-default-soft: #dddddd;
+    --color-text-inverse: #fff;
+    --color-text-inverse-soft: rgba(255, 255, 255, 0.7);
+  
+    --font-display: Futura, Trebuchet MS, Arial, sans-serif;
+    --font-body: Futura, Trebuchet MS, Arial, sans-serif;
+  
+    --font-weight-normal: 400;
+    --font-weight-display: 600;
+    --font-weight-btn: 600;
+  
+    --rounded-btn: 9999px;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -39,8 +85,35 @@ html {
     display: block !important;
 }
 
+@media (min-width: 120px) {
+    .container {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 460px) {
+    .container {
+        max-width: 460px;
+    }
+}
+
 @media (min-width: 768px) {
     .block-nav {
         display: flex !important;
+    }
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
     }
 }

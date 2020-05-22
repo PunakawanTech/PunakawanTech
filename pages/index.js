@@ -19,14 +19,17 @@ class Home extends Component {
                     <img src="/assets/vc.svg" alt="landing-page" />
 
                     <div>
-                        <h1 className="md:text-4xl lg:text-6xl font-bold">
+                        <h1 className="xs:text-sm md:text-4xl lg:text-6xl text-default font-bold">
                             Make Your Business More Profitable
-                            <p className="text-lg font-light">
+                            <p className="xs:text-xs text-lg text-default">
                                 We will help by planning, design, develop, and even training.
                             </p>
                         </h1>
-                        <div className="mt-10">
-                            <a href="mailto:me@punakawantech.com" className="transition duration-500 hover:bg-transparent rounded-full bg-blue-500 hover:text-blue-700 shadow-lg font-semibold text-white py-3 px-10 border border-blue-500 rounded">
+                        <div className="xs:mt-5 mt-10">
+                            <a
+                                href="mailto:me@punakawantech.com"
+                                className="transition duration-500 hover:bg-default rounded-full bg-primary hover:text-primary shadow-lg font-semibold text-inverse py-3 px-10 xs:py-1 xs:px-5 border border-blue-500 rounded"
+                            >
                                 Contact Us
                             </a>
                         </div>
@@ -34,9 +37,9 @@ class Home extends Component {
                 </div>
 
                 <div id="services">
-                    <h1 className="md:text-4xl lg:text-5xl text-blue-700 font-bold text-center sm:mt-5 md:mt-20">
+                    <h1 className="md:text-4xl lg:text-5xl text-primary font-bold text-center xs:mt-8 md:mt-20">
                         STUFF WE DO
-                        <p className="text-lg font-light">
+                        <p className="text-lg text-default">
                             WHAT CAN WE OFFERS TO YOU. HERE IS OUR FIELDS OF DEVELOPMENT.
                         </p>
                     </h1>
@@ -82,14 +85,14 @@ class Home extends Component {
                 </div>
 
                 <div id="about-us">
-                    <h1 className="md:text-4xl lg:text-5xl text-blue-700 font-bold text-center mt-10 md:mt-20">
+                    <h1 className="md:text-4xl lg:text-5xl text-primary font-bold text-center mt-10 md:mt-20">
                         ABOUT US
-                        <p className="text-lg font-light">
+                        <p className="text-lg text-default">
                             COMPANY OVERVIEW AND THE TEAM OF DEVELOPER.
                         </p>
                     </h1>
 
-                    <div className="mt-5 text-justify">
+                    <div className="mt-5 text-justify text-default">
                         This Company started in 2019. Started with 4 team members, this company run
                         till now. This company have done many projects out there, from small to
                         enterprise level. The vision of this company is to create something that
@@ -99,7 +102,7 @@ class Home extends Component {
                         with that idea.
                     </div>
 
-                    <h3 className="md:text-2xl lg:text-3xl text-blue-700 font-semibold text-center mt-10 mb-3">
+                    <h3 className="md:text-2xl lg:text-3xl text-primary font-semibold text-center mt-10 mb-3">
                         Our Teams
                     </h3>
 

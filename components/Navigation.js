@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import Link from 'next/link';
+import { Moon, Sun } from './Icon';
 
 export default class Navigation extends Component {
     constructor(props) {
@@ -7,31 +8,41 @@ export default class Navigation extends Component {
 
         this.handleScroll = this.handleScroll.bind(this);
         this.toggleNav = this.toggleNav.bind(this);
+        this.switchTheme = this.switchTheme.bind(this);
 
         this.state = {
             shadow: '',
             hidden: '',
-        }
+            theme: 'theme-light',
+        };
     }
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+
+        if(localStorage) {
+            const theme = localStorage.getItem('theme', theme);
+        
+            this.setState({
+                theme,
+            });
+        }
     }
-    
+
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     }
-    
-    handleScroll(event) {
-        const scrollTop  = window.scrollY || window.scrollTop || event.srcElement.body.scrollTop;
 
-        if(scrollTop === 0) {
+    handleScroll(event) {
+        const scrollTop = window.scrollY || window.scrollTop || event.srcElement.body.scrollTop;
+
+        if (scrollTop === 0) {
             this.setState({
-                shadow: ''
+                shadow: '',
             });
         } else {
             this.setState({
-                shadow: 'shadow-md'
+                shadow: 'shadow-md',
             });
         }
     }
@@ -39,7 +50,7 @@ export default class Navigation extends Component {
     toggleNav() {
         const { hidden } = this.state;
 
-        if(hidden === '') {
+        if (hidden === '') {
             this.setState({
                 hidden: 'block-nav',
             });
@@ -50,20 +61,43 @@ export default class Navigation extends Component {
         }
     }
 
+    switchTheme() {
+        let { theme } = this.state;
+
+        if(theme === 'theme-light') {
+            theme = 'theme-dark';
+        } else {
+            theme = 'theme-light';
+        }
+
+        if(localStorage) {
+            localStorage.setItem('theme', theme);
+        }
+        
+        this.setState({
+            theme,
+        });
+    }
+
     render() {
         const { children } = this.props;
-        const { shadow, hidden } = this.state;
-        
+        const { shadow, hidden, theme } = this.state;
+
         return (
-            <div className="antialiased">
-                <nav className={`transition duration-500 z-50 flex items-center justify-between flex-wrap p-2 mb-4 fixed w-full bg-white top-0 ${shadow}`}>
-                    <div className="flex items-center flex-shrink-0 mr-6">
+            <div className={`antialiased ${theme} bg-secondary`} style={{minHeight: '100vh'}}>
+                <nav
+                    className={`transition duration-500 z-50 flex items-center justify-between flex-wrap p-2 mb-4 fixed w-full bg-default top-0 ${shadow}`}
+                >
+                    <div className="flex items-center flex-shrink-0 mr-6 text-default">
                         <span className="font-thin text-xl tracking-tight">
-                            <span className="font-semibold text-blue-500">Punakawan</span>Tech
+                            <span className="font-semibold text-primary">Punakawan</span>Tech
                         </span>
                     </div>
                     <div className="block md:hidden lg:hidden">
-                        <button className="flex items-center px-3 py-2 border rounded text-blue-500 border-blue-500 hover:text-gray-700 hover:border-gray-700" onClick={this.toggleNav}>
+                        <button
+                            className="flex items-center px-3 py-2 border rounded text-primary border-blue-500 hover:text-default hover:border-gray-700"
+                            onClick={this.toggleNav}
+                        >
                             <svg
                                 className="fill-current h-3 w-3"
                                 viewBox="0 0 20 20"
@@ -74,40 +108,42 @@ export default class Navigation extends Component {
                             </svg>
                         </button>
                     </div>
-                    <div className={`w-full xs:hidden flex-grow md:flex lg:flex md:items-center lg:items-center md:w-auto lg:w-auto ${hidden}`}>
+                    <div
+                        className={`transition duration-500 w-full xs:hidden flex-grow md:flex lg:flex md:items-center lg:items-center md:w-auto lg:w-auto ${hidden}`}
+                    >
                         <div className="text-sm md:ml-auto">
                             <Link href="/">
-                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-gray-700 hover:text-blue-500 mr-4">
+                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-default hover:text-primary mr-4">
                                     Home
                                 </a>
                             </Link>
                             <Link href="/#services">
-                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-gray-700 hover:text-blue-500 mr-4">
+                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-default hover:text-primary mr-4">
                                     Services
                                 </a>
                             </Link>
                             <Link href="/#about-us">
-                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-gray-700 hover:text-blue-500 mr-4">
+                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-default hover:text-primary mr-4">
                                     About Us
                                 </a>
                             </Link>
                             <Link href="/showcase">
-                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-gray-700 hover:text-blue-500 mr-4">
+                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-default hover:text-primary mr-4">
                                     Showcase
                                 </a>
                             </Link>
                             <Link href="/blog">
-                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-gray-700 hover:text-blue-500 mr-4">
+                                <a className="transition duration-500 block mt-4 md:inline-block lg:inline-block md:mt-0 lg:mt-0 text-default hover:text-primary mr-4">
                                     Blog
                                 </a>
                             </Link>
                         </div>
-                        <div>
+                        <div className="items-center">
                             <a
                                 href="https://github.com/PunakawanTech"
                                 target="_blank"
                                 rel="noopener"
-                                className="transition duration-500 inline-block text-sm px-4 py-2 leading-none border rounded text-gray-700 border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-2 lg:mt-2"
+                                className="transition duration-500 inline-block text-sm px-4 py-2 leading-none rounded text-default hover:text-primary hover:bg-white mt-4 md:mt-2 lg:mt-2"
                             >
                                 <svg
                                     className="fill-current w-5 h-5"
@@ -122,7 +158,11 @@ export default class Navigation extends Component {
                     </div>
                 </nav>
                 <div className="container mx-auto px-4">
-                    <div className="mt-20">{children}</div>
+                    <div className="pt-20">{children}</div>
+
+                    <div onClick={this.switchTheme} className="transition duration-500 bg-white border border-gray-600 rounded-full fixed cursor-pointer hover:border-transparent hover:shadow-lg p-3" style={{bottom: 20, right: 20}}>
+                        {theme === 'theme-light' ? <Moon/> : <Sun/>}
+                    </div>
                 </div>
             </div>
         );

@@ -14,7 +14,7 @@ class Home extends Component {
                 <PageHead title="Home" />
 
                 <div className="mt-20">
-                    <h1 className="md:text-4xl lg:text-5xl text-blue-700 font-thin text-center mb-16 sm:mt-5 md:mt-20">
+                    <h1 className="md:text-4xl lg:text-5xl text-primary font-thin text-center mb-16 sm:mt-5 md:mt-20">
                         SHOWCASE COMING SOON
                     </h1>
 
