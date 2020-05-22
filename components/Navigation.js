@@ -21,7 +21,7 @@ export default class Navigation extends Component {
         window.addEventListener('scroll', this.handleScroll);
 
         if(localStorage) {
-            const theme = localStorage.getItem('theme', theme);
+            const theme = localStorage.getItem('theme', theme) || 'theme-light';
         
             this.setState({
                 theme,
